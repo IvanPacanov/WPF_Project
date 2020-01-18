@@ -1,0 +1,43 @@
+﻿<Window  x:Class="WPF.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"     
+              xmlns:MainWindowTemplate="clr-namespace:WPF.View.ControlTemplate"
+          DataContext="{StaticResource DataSourceCollectionStatement}"
+         WindowStartupLocation="CenterScreen" WindowState="{Binding CurWindowState, Mode=TwoWay}"  AllowsTransparency="False"  WindowStyle="None" MinWidth="600">
+    <x:Code>
+        private void WindowMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+    </x:Code>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+
+        <MainWindowTemplate:MainWindowTemplateContent Template="{StaticResource MainXaml}"
+                                                       Grid.RowSpan="2"/>
+        
+        <Grid Grid.Row="0" MouseLeftButtonDown="WindowMouseLeftButtonDown">
+       
+            <StackPanel x:Name="SP_TopMenu"  
+                        Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="30 10 0 0">
+                <TextBlock x:Name="TB_Title"
+                       Text="In My Wpf World"
+                       VerticalAlignment="Center"                                             
+                       Style="{DynamicResource TextStyle_xaml}"/>
+
+            </StackPanel>
+        </Grid>
+       
+    </Grid>
+
+</Window>

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+  <s:String x:Key="string_Login">Login</s:String>
+  <s:String x:Key="string_Password">Hasło</s:String>  
+  <s:String x:Key="string_Zaloguj">Zaloguj się</s:String>
+  <s:String x:Key="string_Zarejestruj">Zarejestruj się</s:String>
+    <s:String x:Key="string_AnswerSecurity">Odpowiedź</s:String>
+  <s:String x:Key="string_QuestionSecurity">Pytanie Bezpieczeństwa</s:String>
+
+    <s:String x:Key="string_Dog">Imię Twojego psa z dzieciństwa?</s:String>
+
+</ResourceDictionary>

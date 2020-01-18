@@ -1,0 +1,162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+                    xmlns:LoginUser="clr-namespace:WPF.View.UserControls.LoginUser">
+
+    <ControlTemplate x:Key="LoginUserXaml" TargetType="{x:Type LoginUser:UserLoginContent}">
+        <Grid>
+            <Rectangle  Fill="#FF949393" RadiusX="50" RadiusY="50"/>
+            <!--<Rectangle  Fill="#FF5C33AE" RadiusX="50" RadiusY="50"/>-->
+            <Border x:Name="BD_Login" CornerRadius="20" Background="#FF333337" Width="400" Height="400">
+                
+           
+                <StackPanel x:Name="SP_Login" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="TBLogin" 
+                         Width="180"     
+                         Text="{Binding TextBlock_Login}"
+                         HorizontalAlignment="Center" 
+                         materialDesign:HintAssist.Hint="{DynamicResource string_Login}"                                 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                         FontFamily="Frank Ruehl CLM BoldOblique"
+                         TextWrapping="Wrap"
+                         FontSize="18"
+                         Foreground="Black"                                          
+                         FontWeight="Bold" />
+                    <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="TBPassword" 
+                         Width="180"     
+                         Text="{Binding TextBlock_Password}"
+                         HorizontalAlignment="Center" 
+                         materialDesign:HintAssist.Hint="{DynamicResource string_Password}"                                 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                         FontFamily="Frank Ruehl CLM BoldOblique"
+                         TextWrapping="Wrap"
+                         FontSize="18"
+                         Foreground="Black"                                          
+                         FontWeight="Bold" />
+                    <materialDesign:PackIcon Kind="TextboxPassword" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 50 0 0" HorizontalAlignment="Center">
+                        <Button Width="100" Height="40" Content="{DynamicResource string_Zaloguj}" Margin="0 0 30 0" Command="{Binding CheckLogin.Button_Login}"/>
+                        <ToggleButton x:Name="BT_Register" Width="100" Height="40" Content="{DynamicResource string_Zarejestruj}" Style="{StaticResource ToogleButtonTest1}" Command="{Binding RegisterClass.Button_Register}"/>
+                </StackPanel>
+            </StackPanel>
+               
+            </Border>
+            <Border x:Name="BR_Register" CornerRadius="20" Background="#FF333337" Width="700" Height="400" Visibility="Hidden" IsEnabled="False">
+
+
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>                   
+
+                    <StackPanel Margin="20">
+                        <TextBlock Text="{DynamicResource string_Zarejestruj}"
+                            Style="{DynamicResource TextStyle_xaml}"/>
+                        </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackPanel Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                                <TextBox x:Name="TB_Login" 
+                                         Width="180"     
+                                         Text="{Binding Register.TextBlock_Login}"
+                                         HorizontalAlignment="Center" 
+                                         materialDesign:HintAssist.Hint="{DynamicResource string_Login}"                                 
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                         FontFamily="Frank Ruehl CLM BoldOblique"
+                                         TextWrapping="Wrap"
+                                         FontSize="18"
+                                         Foreground="Black"                                          
+                                         FontWeight="Bold" />
+                                <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBox x:Name="TB_Password" 
+                                         Width="180"     
+                                         Text="{Binding Register.TextBlock_Password}"
+                                         HorizontalAlignment="Center" 
+                                         materialDesign:HintAssist.Hint="{DynamicResource string_Password}"                                 
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                         FontFamily="Frank Ruehl CLM BoldOblique"
+                                         TextWrapping="Wrap"
+                                         FontSize="18"
+                                         Foreground="Black"                                          
+                                         FontWeight="Bold" />
+                                <materialDesign:PackIcon Kind="TextboxPassword" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1"  Margin="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                                <ComboBox x:Name="TBQuestionSecurity" 
+                                          Width="180"     
+                                          HorizontalAlignment="Center" 
+                                          materialDesign:HintAssist.Hint="{DynamicResource string_QuestionSecurity}"   
+                                          Style="{StaticResource MaterialDesignComboBox}"           
+                                          FontWeight="Bold"
+                                          ItemsSource="{Binding Register.ItemSource_QuestionSecurity}"
+                                          SelectedItem="{Binding Register.Selected_QuestionSecurity}"/>
+                                <materialDesign:PackIcon Kind="QuestionMark" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBox x:Name="TBAnswerSecurity" 
+                                         Width="180"     
+                                         Text="{Binding Register.TextBlock_AnswerSecurity}"
+                                         HorizontalAlignment="Center" 
+                                         materialDesign:HintAssist.Hint="{DynamicResource string_AnswerSecurity}"                                 
+                                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                         FontFamily="Frank Ruehl CLM BoldOblique"
+                                         TextWrapping="Wrap"
+                                         FontSize="18"
+                                         Foreground="Black"                                          
+                                         FontWeight="Bold" />
+                                <materialDesign:PackIcon Kind="Security" VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" />
+                            </StackPanel>
+
+                        </StackPanel>
+
+
+                        <StackPanel Grid.Column="1"  Orientation="Horizontal" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                            <ToggleButton x:Name="TB_Reg" Width="100" Height="40"    FontWeight="Bold" Content="{DynamicResource string_Zaloguj}" Style="{StaticResource ToogleButtonTest1}" Margin="0 0 30 0" />
+                            <Button x:Name="BT_RegisterReg" Width="100" Height="40"    FontWeight="Bold" Content="{DynamicResource string_Zarejestruj}"   Command="{Binding Register.Button_Register}"/>
+                        </StackPanel>
+                    </Grid>
+                 </Grid>
+              
+           
+            </Border>
+        </Grid>
+
+
+        <ControlTemplate.Triggers>
+            <Trigger SourceName="BT_Register" Property="IsChecked" Value="True">
+                <Setter TargetName="BD_Login" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="BD_Login" Property="IsEnabled" Value="False"/>
+                <Setter TargetName="BR_Register" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="BR_Register" Property="IsEnabled" Value="True"/>
+                <Setter TargetName="TB_Reg" Property="IsChecked" Value="False"/>
+
+            </Trigger>
+            <Trigger SourceName="TB_Reg" Property="IsChecked" Value="True">
+                <Setter TargetName="BD_Login" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="BD_Login" Property="IsEnabled" Value="True"/>
+                <Setter TargetName="BR_Register" Property="Visibility" Value="Hidden"/>
+                <Setter TargetName="BR_Register" Property="IsEnabled" Value="False"/>
+                <Setter TargetName="BT_Register" Property="IsChecked" Value="False"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+</ResourceDictionary>

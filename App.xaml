@@ -1,0 +1,33 @@
+﻿<Application x:Class="WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPF"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             StartupUri="MainWindow.xaml"
+             xmlns:MainClass="clr-namespace:WPF.ViewModel">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
+                <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml" />
+
+
+                <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialDesign.xaml" />
+                
+                
+
+
+                <ResourceDictionary Source="Store/Languages/Language.pl-PL.xaml"/>
+                <ResourceDictionary Source="Store/Style/Style.xaml"/>
+
+                <ResourceDictionary Source="View/ControlTemplate/MainWindowTemplate.xaml"/>
+                <ResourceDictionary Source="View/UserControls/LoginUser/UserLogin.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <MainClass:MainClass x:Key="DataSourceCollectionStatement" />     
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
